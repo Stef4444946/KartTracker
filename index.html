@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KartDay</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span>KART</span>DAY
+        </div>
+
+        <nav>
+            <button class="nav-button active" data-page="dashboard">
+                Dashboard
+            </button>
+
+            <button class="nav-button" data-page="karts">
+                Karts
+            </button>
+
+            <button class="nav-button" data-page="metingen">
+                Meting toevoegen
+            </button>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active">
+
+            <div class="hero">
+
+                <div>
+                    <p class="eyebrow">KARTING STATISTICS</p>
+
+                    <h1>
+                        Karting statistics<br>
+                        made simple.
+                    </h1>
+
+                    <p class="hero-text">
+                        Houd je karttijden bij en ontdek welke karts
+                        het snelst zijn.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-label">Karts</span>
+                    <strong id="stat-karts">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Metingen</span>
+                    <strong id="stat-metingen">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Rijders</span>
+                    <strong id="stat-rijders">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-label">Beste tijd</span>
+                    <strong id="stat-beste">—</strong>
+                </div>
+
+            </div>
+
+
+            <div class="section-card">
+
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">OVERVIEW</p>
+                        <h2>Kart ranking</h2>
+                    </div>
+                </div>
+
+                <div id="dashboard-ranking" class="empty-state">
+
+                    <div class="empty-icon">🏁</div>
+
+                    <h3>Nog geen metingen</h3>
+
+                    <p>
+                        Voeg je eerste kartmeting toe om hier
+                        de ranking te zien.
+                    </p>
+
+                    <button class="primary-button" data-page="metingen">
+                        Eerste meting toevoegen
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KARTS -->
+        <section id="karts" class="page">
+
+            <div class="page-heading">
+
+                <div>
+                    <p class="eyebrow">KARTS</p>
+                    <h1>Alle karts</h1>
+                    <p>
+                        Bekijk de karts en hun prestaties.
+                    </p>
+                </div>
+
+            </div>
+
+            <div id="karts-list" class="cards-grid">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">🏎️</div>
+
+                    <h3>Nog geen karts</h3>
+
+                    <p>
+                        Voeg een meting toe om automatisch
+                        een kart aan te maken.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- METING TOEVOEGEN -->
+        <section id="metingen" class="page">
+
+            <div class="page-heading">
+
+                <div>
+                    <p class="eyebrow">NIEUWE METING</p>
+
+                    <h1>Meting toevoegen</h1>
+
+                    <p>
+                        Voeg een tijd toe aan een kart.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <form id="measurement-form">
+
+                    <div class="form-group">
+
+                        <label for="kart">
+                            Kart
+                        </label>
+
+                        <input
+                            type="text"
+                            id="kart"
+                            placeholder="Bijvoorbeeld Kart 6"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="rijder">
+                                Rijder
+                            </label>
+
+                            <input
+                                type="text"
+                                id="rijder"
+                                placeholder="Bijvoorbeeld Stef"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="niveau">
+                                Rijderniveau
+                            </label>
+
+                            <input
+                                type="number"
+                                id="niveau"
+                                min="1"
+                                max="10"
+                                placeholder="1 - 10"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="tijd">
+                            Tijd
+                        </label>
+
+                        <div class="time-input">
+
+                            <input
+                                type="number"
+                                id="tijd"
+                                step="0.001"
+                                min="0"
+                                placeholder="41.234"
+                                required
+                            >
+
+                            <span>sec</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="notitie">
+                            Notitie
+                            <span class="optional">optioneel</span>
+                        </label>
+
+                        <textarea
+                            id="notitie"
+                            placeholder="Bijvoorbeeld: kart voelde goed in de bochten"
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button full-width"
+                    >
+                        Meting opslaan
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- KART DETAIL -->
+        <section id="kart-detail" class="page">
+
+            <button id="back-to-karts" class="back-button">
+                ← Terug naar karts
+            </button>
+
+            <div id="kart-detail-content"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/database.js"></script>
+    <script src="js/calculations.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

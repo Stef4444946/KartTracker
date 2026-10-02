@@ -1,0 +1,947 @@
+/* ========================================
+   KARTDAY
+   Main stylesheet
+======================================== */
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0d1117;
+    color: #f4f6f8;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   TOPBAR
+======================================== */
+
+.topbar {
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: #111820;
+    border-bottom: 1px solid #202a35;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: #e63946;
+}
+
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+
+.nav-button {
+    border: none;
+    background: transparent;
+
+    color: #9da7b3;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.nav-button:hover {
+    background: #19212b;
+    color: white;
+}
+
+
+.nav-button.active {
+    background: #e63946;
+    color: white;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+
+.page {
+    display: none;
+}
+
+
+.page.active {
+    display: block;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 290px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 50px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            110deg,
+            #171f29,
+            #111820
+        );
+
+    border: 1px solid #242f3c;
+
+    margin-bottom: 24px;
+}
+
+
+.eyebrow {
+    color: #e63946;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 9px;
+}
+
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+}
+
+
+.hero-text {
+    color: #9da7b3;
+
+    font-size: 16px;
+
+    max-width: 500px;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+
+.stat-card {
+    background: #111820;
+
+    border: 1px solid #242f3c;
+
+    border-radius: 14px;
+
+    padding: 22px;
+}
+
+
+.stat-label {
+    display: block;
+
+    color: #8c97a4;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+
+.stat-card strong {
+    font-size: 28px;
+}
+
+
+/* ========================================
+   SECTION CARD
+======================================== */
+
+.section-card {
+    background: #111820;
+
+    border: 1px solid #242f3c;
+
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+    font-size: 22px;
+}
+
+
+/* ========================================
+   PAGE HEADING
+======================================== */
+
+.page-heading {
+    margin-bottom: 28px;
+}
+
+
+.page-heading h1 {
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.page-heading p:not(.eyebrow) {
+    color: #8c97a4;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.empty-state {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #8c97a4;
+}
+
+
+.empty-icon {
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+
+.empty-state h3 {
+    color: #f4f6f8;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+}
+
+
+.empty-state p {
+    max-width: 450px;
+
+    margin: 0 auto 20px;
+
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.primary-button {
+    border: none;
+
+    background: #e63946;
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+    background: #f04b57;
+
+    transform: translateY(-1px);
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+
+/* ========================================
+   FORM
+======================================== */
+
+.form-card {
+    max-width: 700px;
+
+    background: #111820;
+
+    border: 1px solid #242f3c;
+
+    border-radius: 14px;
+
+    padding: 30px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 16px;
+}
+
+
+label {
+    display: block;
+
+    color: #d9dee4;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+
+.optional {
+    color: #697582;
+
+    font-size: 12px;
+
+    font-weight: normal;
+
+    margin-left: 5px;
+}
+
+
+input,
+textarea {
+    width: 100%;
+
+    border: 1px solid #303b48;
+
+    background: #0d1117;
+
+    color: white;
+
+    border-radius: 8px;
+
+    padding: 12px 13px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color: #e63946;
+}
+
+
+textarea {
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+.time-input {
+    position: relative;
+}
+
+
+.time-input input {
+    padding-right: 55px;
+}
+
+
+.time-input span {
+    position: absolute;
+
+    right: 14px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #697582;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   KART GRID
+======================================== */
+
+.cards-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+
+.kart-card {
+    background: #111820;
+
+    border: 1px solid #242f3c;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.kart-card:hover {
+    border-color: #e63946;
+
+    transform: translateY(-2px);
+}
+
+
+.kart-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+
+.kart-card-stats {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.kart-stat {
+    background: #0d1117;
+
+    padding: 12px;
+
+    border-radius: 8px;
+}
+
+
+.kart-stat span {
+    display: block;
+
+    color: #697582;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.kart-stat strong {
+    font-size: 15px;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-button {
+    border: none;
+
+    background: transparent;
+
+    color: #9da7b3;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+
+.back-button:hover {
+    color: white;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 850px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+
+    main {
+        padding: 25px 20px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .cards-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topbar {
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    nav {
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    .nav-button {
+        white-space: nowrap;
+    }
+
+
+    .hero {
+        padding: 30px 25px;
+
+        min-height: 250px;
+    }
+
+
+    .stats-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 10px;
+    }
+
+
+    .stat-card {
+        padding: 17px;
+    }
+
+
+    .stat-card strong {
+        font-size: 22px;
+    }
+
+
+    .form-row {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cards-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+/* ========================================
+   RANKING
+======================================== */
+
+.ranking-list {
+    width: 100%;
+}
+
+
+.ranking-header,
+.ranking-row {
+    display: grid;
+
+    grid-template-columns:
+        55px 1fr 120px 120px 80px;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.ranking-header {
+    color: #697582;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    padding: 0 16px 10px;
+
+    border-bottom: 1px solid #242f3c;
+}
+
+
+.ranking-row {
+    padding: 16px;
+
+    border-bottom: 1px solid #202a35;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.ranking-row:last-child {
+    border-bottom: none;
+}
+
+
+.ranking-row:hover {
+    background: #18212b;
+}
+
+
+.ranking-position {
+    color: #e63946;
+
+    font-weight: 800;
+}
+
+
+.ranking-kart {
+    font-weight: 700;
+}
+
+
+/* ========================================
+   MEASUREMENTS
+======================================== */
+
+.measurements-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.measurement-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 100px 120px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid #202a35;
+}
+
+
+.measurement-row:last-child {
+    border-bottom: none;
+}
+
+
+.measurement-row span:nth-child(2) {
+    color: #8c97a4;
+
+    font-size: 13px;
+}
+
+
+.measurement-row strong {
+    text-align: right;
+}
+
+
+/* ========================================
+   MOBILE RANKING
+======================================== */
+
+@media (max-width: 700px) {
+
+    .ranking-header,
+    .ranking-row {
+        grid-template-columns:
+            35px 1fr 80px 80px 50px;
+
+        font-size: 12px;
+    }
+
+
+    .ranking-header {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .ranking-row {
+        padding: 14px 8px;
+    }
+
+
+    .measurement-row {
+        grid-template-columns:
+            1fr 65px 85px;
+
+        font-size: 13px;
+    }
+
+}
+
+/* ========================================
+   RANKING - SCORE TIJD
+======================================== */
+
+.ranking-row span:nth-child(3) {
+    font-weight: 700;
+}
+
+
+.ranking-row span:nth-child(3)::after {
+    content: " s";
+    color: #697582;
+    font-weight: 400;
+}
+
+/* ========================================
+   PACE
+======================================== */
+
+.pace-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #0d1117;
+
+    border: 1px solid #242f3c;
+
+    border-radius: 10px;
+
+    padding: 16px 18px;
+
+    margin-bottom: 20px;
+}
+
+
+.pace-info span {
+    color: #8c97a4;
+    font-size: 14px;
+}
+
+
+.pace-info strong {
+    font-size: 22px;
+}
+
+
+/* ========================================
+   DRIVER TABLE
+======================================== */
+
+.driver-table {
+    width: 100%;
+}
+
+
+.driver-row {
+    display: grid;
+
+    grid-template-columns:
+        1.3fr
+        80px
+        120px
+        120px
+        120px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #202a35;
+}
+
+
+.driver-row:last-child {
+    border-bottom: none;
+}
+
+
+.driver-header {
+    color: #697582;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.driver-name {
+    font-weight: 700;
+}
+
+
+.difference-faster {
+    color: #4ade80;
+}
+
+
+.difference-slower {
+    color: #f87171;
+}
+
+
+.difference-neutral {
+    color: #9da7b3;
+}
+
+
+/* ========================================
+   MOBILE DRIVER TABLE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .driver-row {
+        grid-template-columns:
+            1fr
+            55px
+            80px
+            80px
+            80px;
+
+        gap: 8px;
+
+        padding: 12px 8px;
+
+        font-size: 12px;
+    }
+
+
+    .driver-header {
+        font-size: 9px;
+    }
+
+
+    .pace-info {
+        padding: 14px;
+    }
+
+}
